@@ -185,7 +185,7 @@
     <p>Pensez-vous payer trop, pas assez ou juste ? Notre étude rapide et gratuite vous aidera à faire le point.</p>
 
     <div class="form-contact" id="contactForm">
-      <form id="contact" action="https://formspree.io/f/TON_ENDPOINT" method="POST">
+      <form id="contact" action="https://formspree.io/f/https://formspree.io/f/xgvznegn" method="POST">
         <input type="text" name="company" placeholder="Nom de l'entreprise" required />
         <input type="number" name="employees" placeholder="Nombre de salariés" required min="1" />
         <input type="text" name="firstname" placeholder="Prénom" required />
