@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz : Combien coûte une mutuelle ?</title>
+<style>
+  body {
+    background-color: #F7F2EB; /* beige clair doux */
+    color: #5B4B8A; /* violet doux */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 480px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(91, 75, 138, 0.2);
+    color: #5B4B8A; /* texte violet */
+    position: relative;
+  }
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .logo-svg {
+    width: 50px;
+    height: 50px;
+  }
+  .logo-text {
+    margin-top: 4px;
+    font-weight: 700;
+    color: #8F82C9; /* violet clair */
+    font-size: 1.1rem;
+    user-select: none;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #8F82C9; /* violet clair */
+  }
+  p.intro {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #5B4B8A;
+  }
+  form {
+    margin-bottom: 15px;
+  }
+  label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #5B4B8A;
+    position: relative;
+    padding-left: 30px;
+  }
+
+  /* Boutons radio carrés personnalisés */
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #5B4B8A;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: #5B4B8A;
+    border-radius: 2px;
+  }
+
+  button {
+    margin-top: 20px;
+    background-color: #D94F4F; /* rouge doux */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+  }
+  button:hover {
+    background-color: #b03b3b; /* rouge un peu plus foncé au hover */
+  }
+  .result {
+    display: none;
+    margin-top: 20px;
+  }
+  .form-contact {
+    margin-top: 20px;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+    width: 100%;
+    padding: 10px 8px;
+    margin-bottom: 15px;
+    border: 1px solid #5B4B8A;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #5B4B8A;
+    background-color: white;
+  }
+  input::placeholder {
+    color: #999999;
+  }
+  .footer-note {
+    font-size: 0.8rem;
+    color: #5B4B8A;
+    margin-top: 30px;
+    text-align: center;
+  }
+  footer {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: #5B4B8A;
+    text-align: center;
+  }
+  footer a {
+    color: #D94F4F;
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+  .success-message {
+    color: #5B4B8A;
+    background-color: #DFF0D8;
+    border: 1px solid #3C763D;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="logo-section">
+    <!-- Logo stylisé simple en SVG -->
+    <svg class="logo-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Logo Aésio Mutuelle">
+      <circle cx="32" cy="32" r="30" stroke="#8F82C9" stroke-width="4" />
+      <path d="M16 32 L32 48 L48 16" stroke="#8F82C9" stroke-width="4" stroke-linejoin="round" />
+    </svg>
+    <div class="logo-text">Aésio Mutuelle</div>
+  </div>
+
+  <h1>Quiz express : combien coûte vraiment une mutuelle en France ?</h1>
+  <p class="intro">
+    Testez vos connaissances et découvrez la vraie moyenne, ainsi qu’une étude personnalisée pour optimiser votre complémentaire santé.
+  </p>
+
+  <form id="quizForm">
+    <label><input type="radio" name="cost" value="1200" required> 1 200 €</label>
+    <label><input type="radio" name="cost" value="1500"> 1 500 €</label>
+    <label><input type="radio" name="cost" value="1800"> 1 800 €</label>
+    <button type="submit">Voir la réponse et mon étude</button>
+  </form>
+
+  <div class="result" id="resultSection">
+    <p><strong>Réponse :</strong> La bonne réponse est <strong>1 500 €</strong> par an, selon les dernières données INSEE.</p>
+    <p>Pensez-vous payer trop, pas assez ou juste ? Notre étude rapide et gratuite vous aidera à faire le point.</p>
+
+    <div class="form-contact" id="contactForm">
+      <form id="contact" action="https://formspree.io/f/TON_ENDPOINT" method="POST">
+        <input type="text" name="company" placeholder="Nom de l'entreprise" required />
+        <input type="number" name="employees" placeholder="Nombre de salariés" required min="1" />
+        <input type="text" name="firstname" placeholder="Prénom" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Téléphone (optionnel)" />
+        <button type="submit">Demander un rendez-vous avec un conseiller</button>
+      </form>
+      <div id="successMessage" class="success-message" style="display:none;">
+        Merci ! Votre demande a bien été reçue.
+      </div>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    *Les données sont fournies à titre indicatif selon INSEE 2024. Nous respectons votre vie privée et ne partageons pas vos informations.
+  </p>
+</div>
+
+<footer>
+  <a href="#">Contact</a> | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
+</footer>
+
+<script>
+  const quizForm = document.getElementById('quizForm');
+  const resultSection = document.getElementById('resultSection');
+  const contactForm = document.getElementById('contactForm');
+  const contact = document.getElementById('contact');
+  const successMessage = document.getElementById('successMessage');
+
+  quizForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    quizForm.style.display = 'none';
+    resultSection.style.display = 'block';
+    contactForm.style.display = 'block';
+  });
+
+  contact.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(contact);
+
+    fetch(contact.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        contact.style.display = 'none';
+        successMessage.style.display = 'block';
+      } else {
+        alert("Oops! Une erreur est survenue, veuillez réessayer.");
+      }
+    }).catch(() => {
+      alert("Oops! Une erreur est survenue, veuillez réessayer.");
+    });
+  });
+</script>
+
+</body>
+</html>
